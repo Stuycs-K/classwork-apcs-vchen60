@@ -3,6 +3,17 @@ public class MyArrays {
 
   }
 
+  public static String arrayToString(int[] arr) {
+    String result = "[";
+    for(int i = 0; i < arr.length; i++) {
+      result += arr[i];
+      if(i != arr.length-1) {
+        result += ", "
+      }
+    }
+    return result + "]";
+  }
+
   public static int[] returnCopy(int[]ary) {
     int[] newAry = new int[ary.length];
     for(int i = 0; i < ary.length; i++) {
