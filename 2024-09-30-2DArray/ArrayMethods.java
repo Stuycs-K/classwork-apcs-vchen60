@@ -14,7 +14,7 @@ public class ArrayMethods {
     int[][] emptyCase = {};
     int[][] emptyCase2 = {{},{}};
     int[][] emptyCase3 = {{},{},{},{}}; //remember to try for swapRC too!
-    //all 3
+    //all except SwapRC
 
     //Ragged Arrays
     int[][] rag1 = {{}, {123}, {1,2,4,8,16}};
@@ -44,7 +44,7 @@ public class ArrayMethods {
 
     System.out.println(arrToString(rag1));
     System.out.println(arrToString(rag2));
-    System.out.println(arrToString(rag3));
+    System.out.println(arrToString(rag3)); //independence!!!
     System.out.println(arrToString(rag4));
     System.out.println(arrToString(rag5));
 
@@ -64,18 +64,14 @@ public class ArrayMethods {
     System.out.println(arr2DSum(rag5));
 
     //swapRC cases
-    System.out.println(swapRC(a));
-    System.out.println(swapRC(b));
-    System.out.println(swapRC(c));
+    System.out.println(arrToString(swapRC(a)));
+    System.out.println(arrToString(swapRC(b)));
+    System.out.println(arrToString(swapRC(c)));
 
-    System.out.println(swapRC(emptyCase));
-    System.out.println(swapRC(emptyCase));
-    System.out.println(swapRC(emptyCase));
-
-    System.out.println(swapRC(swapper1));
-    System.out.println(swapRC(swapper2));
-    System.out.println(swapRC(swapper3));
-    System.out.println(swapRC(swapper4));
+    System.out.println(arrToString(swapRC(swapper1)));
+    System.out.println(arrToString(swapRC(swapper2)));
+    System.out.println(arrToString(swapRC(swapper3)));
+    System.out.println(arrToString(swapRC(swapper4)));
 
 
 
