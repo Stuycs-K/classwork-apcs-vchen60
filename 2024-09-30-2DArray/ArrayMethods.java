@@ -111,9 +111,7 @@ public class ArrayMethods {
   public static String arrToString(int[][]ary){
     String result = "[";
     for(int i = 0; i < ary.length; i++) {
-      result += '[';
       result += arrayToString(ary[i]);
-      result += ']';
 
 
       if(i != ary.length-1) {
