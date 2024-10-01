@@ -28,10 +28,10 @@ public class ArrayMethods {
     int[][] swapper1 = {{2,3,4},{5,6,7},{8,9,10}};
     int[][] swapper2 = {{1,2,3,4},{5,6,7,8},{9,10,11,12}};
     int[][] swapper3 = {{1,2,3,4,5}}; //single array test
-    int[][] swapper4 = {{1000, 2000, 3000, 4000, 5000}, 
-    {60000, 70000, 80000, 90000, 100000}, 
-    {1100000, 1200000, 1300000, 1400000, 1500000}}; 
-    
+    int[][] swapper4 = {{1000, 2000, 3000, 4000, 5000},
+    {60000, 70000, 80000, 90000, 100000},
+    {1100000, 1200000, 1300000, 1400000, 1500000}};
+
 
     //arrToString test cases
     System.out.println(arrToString(a));
@@ -85,7 +85,7 @@ public class ArrayMethods {
   * "[2, 3, 4, 9]"
   * Note the comma+space between values, and between values
   */
-  public static String arrayToString(int[] arr) {
+  public static String arrToString(int[] arr) {
     String result = "[";
     for(int i = 0; i < arr.length; i++) {
       result += arr[i];
@@ -107,7 +107,7 @@ public class ArrayMethods {
   public static String arrToString(int[][]ary){
     String result = "[";
     for(int i = 0; i < ary.length; i++) {
-      result += arrayToString(ary[i]);
+      result += arrToString(ary[i]);
 
 
       if(i != ary.length-1) {
