@@ -33,6 +33,17 @@ public class ArrayMethods {
     {1100000, 1200000, 1300000, 1400000, 1500000}};
 
 
+    //test cases for 10/1/2024 functions
+    int[][] case1 = {{1,2,3,4,5}, {6,7,8,9,10}, {11,12,13,14,15}};
+    int[][] case2 = {{}, {1,2,3}};
+    int[][] case3 = {{1}, {2}, {3}};
+
+    int[][] replace1 = {{-1,-2,-3}, {-4,-5,-6}, {-7,-8,-9}};
+    int[][] replace2 = {{-1}, {-4}, {-7}};
+    int[][] replace3 = {{1,2,3}, {4,5,6}, {7,8,9}};
+    int[][] replace4 = {{-1,22222,3030303}, {-4,-55555,6666666, 707, -8888}, {9,10,-11, -12}};
+
+
     //arrToString test cases
     System.out.println(arrToString(a));
     System.out.println(arrToString(b));
@@ -47,6 +58,7 @@ public class ArrayMethods {
     System.out.println(arrToString(rag3)); //independence!!!
     System.out.println(arrToString(rag4));
     System.out.println(arrToString(rag5));
+
 
     //arr2DSum test cases
     System.out.println(arr2DSum(a));
@@ -63,6 +75,7 @@ public class ArrayMethods {
     System.out.println(arr2DSum(rag4));
     System.out.println(arr2DSum(rag5));
 
+
     //swapRC cases
     System.out.println(arrToString(swapRC(a)));
     System.out.println(arrToString(swapRC(b)));
@@ -73,7 +86,49 @@ public class ArrayMethods {
     System.out.println(arrToString(swapRC(swapper3)));
     System.out.println(arrToString(swapRC(swapper4)));
 
+    //copy cases
+    System.out.println(arrToString(copy(emptyCase)));
+    System.out.println(arrToString(copy(emptyCase2)));
+    System.out.println(arrToString(copy(case1)));
+    System.out.println(arrToString(copy(case2)));
+    System.out.println(arrToString(copy(case3)));
 
+    //TEST ADDRESSES FIRST
+
+    System.out.println(emptyCase);
+    System.out.println(emptyCase2);
+    System.out.println(case1);
+    System.out.println(case2);
+    System.out.println(case3);
+
+    System.out.println(copy(emptyCase));
+    System.out.println(copy(emptyCase2));
+    System.out.println(copy(case1));
+    System.out.println(copy(case2));
+    System.out.println(copy(case3));
+
+
+    //copy cases
+    replaceNegative(emptyCase);
+    replaceNegative(emptyCase2);
+    replaceNegative(emptyCase3);
+    replaceNegative(case1);
+    replaceNegative(case2);
+    replaceNegative(case3);
+    replaceNegative(replace1);
+    replaceNegative(replace2);
+    replaceNegative(replace3);
+    replaceNegative(replace4);
+    System.out.println(arrToString(emptyCase));
+    System.out.println(arrToString(emptyCase2));
+    System.out.println(arrToString(emptyCase3));
+    System.out.println(arrToString(case1));
+    System.out.println(arrToString(case2));
+    System.out.println(arrToString(case3));
+    System.out.println(arrToString(replace1));
+    System.out.println(arrToString(replace2));
+    System.out.println(arrToString(replace3));
+    System.out.println(arrToString(replace4));
 
 
   }
@@ -95,6 +150,13 @@ public class ArrayMethods {
     }
     return result + "]";
   }
+  // ********* COMMENTS *********
+  // Essentially, this function takes the starting array, and starts with a bracket, then appends
+  // the required integer to the string, along with a ", "
+  // until it reaches the end. at this point, it would
+  // end with the bracket at the last entry. note that the for loop and if conditions
+  // are designed to handle edge cases (empty/1-element arrays)
+
 
   //3. Write arrToString, with a 2D array parameter.
   //Note: Different parameters are allowed with the same function name.
@@ -116,6 +178,11 @@ public class ArrayMethods {
     }
     return (result + ']');
   }
+
+
+  // ********* COMMENTS *********
+  // 
+
 
   /*Return the sum of all of the values in the 2D array */
   public static int arr2DSum(int[][]nums){
@@ -145,7 +212,7 @@ public class ArrayMethods {
     return result;
   }
 
-  //3. Modify a given 2D array of integer as follows:
+//3. Modify a given 2D array of integer as follows:
 //Replace all the negative values:
 //-When the row number is the same as the column number replace
 //that negative with the value 1
@@ -171,9 +238,9 @@ public static void replaceNegative(int[][] vals){
 //You SHOULD write a helper method for this.
 //If you don't see a good way to do that, you should stop and look at prior methods.
 public static int[][] copy(int[][] nums){
-  int[nums.length][] result;
+  int[][] result = new int[nums.length][];
   for(int i = 0; i < nums.length; i++) {
-    result[0]=new int[nums[i].length];
+    result[i]=new int[nums[i].length];
   }
 
   for(int i = 0; i < nums.length; i++) {
@@ -182,8 +249,6 @@ public static int[][] copy(int[][] nums){
       result[i][j] = l; 
     }
   }
+  return result;
 }
-
-
-
 }
