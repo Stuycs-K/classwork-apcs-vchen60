@@ -171,7 +171,17 @@ public static void replaceNegative(int[][] vals){
 //You SHOULD write a helper method for this.
 //If you don't see a good way to do that, you should stop and look at prior methods.
 public static int[][] copy(int[][] nums){
-  return null;//placeholder so it compiles
+  int[nums.length][] result;
+  for(int i = 0; i < nums.length; i++) {
+    result[0]=new int[nums[i].length];
+  }
+
+  for(int i = 0; i < nums.length; i++) {
+    for(int j = 0; j < nums[i].length; j++) {
+      int l = nums[i][j];
+      result[i][j] = l; 
+    }
+  }
 }
 
 
