@@ -239,15 +239,17 @@ public static void replaceNegative(int[][] vals){
 //If you don't see a good way to do that, you should stop and look at prior methods.
 public static int[][] copy(int[][] nums){
   int[][] result = new int[nums.length][];
-  for(int i = 0; i < nums.length; i++) {
-    result[i]=new int[nums[i].length];
-  }
 
   for(int i = 0; i < nums.length; i++) {
-    for(int j = 0; j < nums[i].length; j++) {
-      int l = nums[i][j];
-      result[i][j] = l; 
-    }
+    result[i] = doer(nums[i]);
+  }
+  return result;
+}
+
+public static int[] doer(int[] nums) {
+  int[] result = new int[nums.length];
+  for(int i = 0; i < nums.length; i++) {
+    result[i] = nums[i];
   }
   return result;
 }
