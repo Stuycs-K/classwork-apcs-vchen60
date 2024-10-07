@@ -126,7 +126,22 @@ public class ArrayDemo{
   //   Note there is no whitespace in the string, it all one line with no spaces/tabs.
   //   e.g. htmlTable(new int[][]{{1,2},{3}})  returns:
   // "<table><tr><td>1</td><td>2</td></tr><tr><td>3</td></tr></table>"
+
+  public static String htmlArrToString(int[] arr) {
+    String result = "<tr>";
+    for(int i = 0; i < arr.length; i++) {
+      result += "<td>"
+      result += arr[i];
+      result += "</td>"
+    }
+    return result + "</tr>";
+  }
+
   public static String htmlTable(int[][]nums){
-    return "";
+    String result = "<table>";
+    for(int i = 0; i < ary.length; i++) {
+      result += htmlArrToString(ary[i]);
+    }
+    return (result + '</table>');
   }
 }
