@@ -6,6 +6,117 @@ public class ArrayDemo{
     //Compare Arrays.toString(yourArray) to YOUR arrayToString() method to make sure yours is correct
     //do not use any other Arrays.method()
 
+    int[] yes1 = {1,2,3,4,5};
+    int[] yes2 = {0, 0, 0};
+    int[] yes3 = {-1, -2, -3, 0, 1, 2, 3};
+
+    //Rectangular/Square Arrays
+    int[][] a = {{1,2}, {3,4}};
+    int[][] b = {{100, 200, 300}, {400, 500, 600}};
+    int[][] c = {{10, 20, 30, 40}, {50, 60, 70, 80}, {90, 100, 110, 120}};
+    //all 3
+
+    //Ragged Arrays
+    int[][] rag1 = {{}, {123}, {1,2,4,8,16}};
+    int[][] rag2 = {{}, {10, 20, 30, 40, 50}, {}, {}};
+    int[][] rag3 = {{111}, {222, 444}, {111, 333, 555}};
+    int[][] rag4 = {{0,1,2},{3,4},{5,6},{7,8,9,10,11}};
+    int[][] rag5 = {{7,8,9}};
+    //all except SwapRC
+
+    //Specifically swap cases
+    int[][] swapper1 = {{2,3,4},{5,6,7},{8,9,10}};
+    int[][] swapper2 = {{1,2,3,4},{5,6,7,8},{9,10,11,12}};
+    int[][] swapper3 = {{1,2,3,4,5}}; //single array test
+    int[][] swapper4 = {{1000, 2000, 3000, 4000, 5000},
+    {60000, 70000, 80000, 90000, 100000},
+    {1100000, 1200000, 1300000, 1400000, 1500000}};
+
+
+    //test cases for 10/1/2024 functions
+    int[][] case1 = {{1,2,3,4,5}, {6,7,8,9,10}, {11,12,13,14,15}};
+    int[][] case2 = {{}, {1,2,3}};
+    int[][] case3 = {{1}, {2}, {3}};
+
+    int[][] replace1 = {{-1,-2,-3}, {-4,-5,-6}, {-7,-8,-9}};
+    int[][] replace2 = {{-1}, {-4}, {-7}};
+    int[][] replace3 = {{1,2,3}, {4,5,6}, {7,8,9}};
+    int[][] replace4 = {{-1,22222,3030303}, {-4,-55555,6666666, 707, -8888}, {9,10,-11, -12}};
+
+
+    //arrToString test cases
+
+    
+    System.out.println(arrToString(yes1));
+    System.out.println(arrToString(yes2));
+    System.out.println(arrToString(yes3));
+
+    System.out.println(arrToString(a));
+    System.out.println(arrToString(b));
+    System.out.println(arrToString(c));
+
+    System.out.println(arrToString(rag1));
+    System.out.println(arrToString(rag2));
+    System.out.println(arrToString(rag3)); //independence!!!
+    System.out.println(arrToString(rag4));
+    System.out.println(arrToString(rag5));
+
+
+    //arr2DSum test cases
+    System.out.println(arr2DSum(a));
+    System.out.println(arr2DSum(b));
+    System.out.println(arr2DSum(c));
+
+    System.out.println(arr2DSum(rag1));
+    System.out.println(arr2DSum(rag2));
+    System.out.println(arr2DSum(rag3));
+    System.out.println(arr2DSum(rag4));
+    System.out.println(arr2DSum(rag5));
+
+
+    //swapRC cases
+    System.out.println(arrToString(swapRC(a)));
+    System.out.println(arrToString(swapRC(b)));
+    System.out.println(arrToString(swapRC(c)));
+
+    System.out.println(arrToString(swapRC(swapper1)));
+    System.out.println(arrToString(swapRC(swapper2)));
+    System.out.println(arrToString(swapRC(swapper3)));
+    System.out.println(arrToString(swapRC(swapper4)));
+
+    //copy cases
+    System.out.println(arrToString(copy(case1)));
+    System.out.println(arrToString(copy(case2)));
+    System.out.println(arrToString(copy(case3)));
+
+    //TEST ADDRESSES FIRST
+
+
+    System.out.println(case1);
+    System.out.println(case2);
+    System.out.println(case3);
+
+    System.out.println(copy(case1));
+    System.out.println(copy(case2));
+    System.out.println(copy(case3));
+
+
+    //copy cases
+    replaceNegative(case1);
+    replaceNegative(case2);
+    replaceNegative(case3);
+    replaceNegative(replace1);
+    replaceNegative(replace2);
+    replaceNegative(replace3);
+    replaceNegative(replace4);
+    System.out.println(arrToString(case1));
+    System.out.println(arrToString(case2));
+    System.out.println(arrToString(case3));
+    System.out.println(arrToString(replace1));
+    System.out.println(arrToString(replace2));
+    System.out.println(arrToString(replace3));
+    System.out.println(arrToString(replace4));
+
   }
 
   public static String arrToString(int[] arr) {
@@ -82,7 +193,7 @@ public class ArrayDemo{
         }
       }
     }
-  }
+  }arr2DSum
 
   //4. Make a copy of the given 2d array.
   //When testing : make sure that changing the original does NOT change the copy.
