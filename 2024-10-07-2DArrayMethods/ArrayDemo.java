@@ -17,8 +17,7 @@ public class ArrayDemo{
     //all 3
 
     //Ragged Arrays
-    int[][] rag1 = {{}, {123}, {1,2,4,8,16}};
-    int[][] rag2 = {{}, {10, 20, 30, 40, 50}, {}, {}};
+    
     int[][] rag3 = {{111}, {222, 444}, {111, 333, 555}};
     int[][] rag4 = {{0,1,2},{3,4},{5,6},{7,8,9,10,11}};
     int[][] rag5 = {{7,8,9}};
@@ -55,9 +54,8 @@ public class ArrayDemo{
     System.out.println(arrToString(b));
     System.out.println(arrToString(c));
 
-    System.out.println(arrToString(rag1));
-    System.out.println(arrToString(rag2));
-    System.out.println(arrToString(rag3)); //independence!!!
+    
+    System.out.println(arrToString(rag3)); 
     System.out.println(arrToString(rag4));
     System.out.println(arrToString(rag5));
 
@@ -67,9 +65,8 @@ public class ArrayDemo{
     System.out.println(arr2DSum(b));
     System.out.println(arr2DSum(c));
 
-    System.out.println(arr2DSum(rag1));
-    System.out.println(arr2DSum(rag2));
-    System.out.println(arr2DSum(rag3));
+    
+    System.out.println(arr2DSum(rag3)); //independence!!!
     System.out.println(arr2DSum(rag4));
     System.out.println(arr2DSum(rag5));
 
@@ -123,8 +120,7 @@ public class ArrayDemo{
     System.out.println(htmlTable(b));
     System.out.println(htmlTable(c));
 
-    System.out.println(htmlTable(rag1));
-    System.out.println(htmlTable(rag2));
+    
     System.out.println(htmlTable(rag3));
     System.out.println(htmlTable(rag4));
     System.out.println(htmlTable(rag5));
