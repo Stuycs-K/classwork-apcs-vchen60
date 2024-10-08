@@ -117,6 +117,23 @@ public class ArrayDemo{
     System.out.println(arrToString(replace3));
     System.out.println(arrToString(replace4));
 
+    //html cases
+
+    System.out.println(htmlTable(a));
+    System.out.println(htmlTable(b));
+    System.out.println(htmlTable(c));
+
+    System.out.println(htmlTable(rag1));
+    System.out.println(htmlTable(rag2));
+    System.out.println(htmlTable(rag3));
+    System.out.println(htmlTable(rag4));
+    System.out.println(htmlTable(rag5));
+
+    System.out.println(htmlTable(replace1));
+    System.out.println(htmlTable(replace2));
+    System.out.println(htmlTable(replace3));
+    System.out.println(htmlTable(replace4));
+
   }
 
   public static String arrToString(int[] arr) {
@@ -193,7 +210,7 @@ public class ArrayDemo{
         }
       }
     }
-  }arr2DSum
+  }
 
   //4. Make a copy of the given 2d array.
   //When testing : make sure that changing the original does NOT change the copy.
@@ -241,18 +258,18 @@ public class ArrayDemo{
   public static String htmlArrToString(int[] arr) {
     String result = "<tr>";
     for(int i = 0; i < arr.length; i++) {
-      result += "<td>"
+      result += "<td>";
       result += arr[i];
-      result += "</td>"
+      result += "</td>";
     }
     return result + "</tr>";
   }
 
   public static String htmlTable(int[][]nums){
     String result = "<table>";
-    for(int i = 0; i < ary.length; i++) {
-      result += htmlArrToString(ary[i]);
+    for(int i = 0; i < nums.length; i++) {
+      result += htmlArrToString(nums[i]);
     }
-    return (result + '</table>');
+    return (result + "</table>");
   }
 }
