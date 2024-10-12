@@ -54,10 +54,18 @@ public class ArrayDemo{
     System.out.println(arrToString(b));
     System.out.println(arrToString(c));
 
+    System.out.println(Arrays.deepToString(a));
+    System.out.println(Arrays.deepToString(b));
+    System.out.println(Arrays.deepToString(c)); //test w built-in java function; works
+
     
     System.out.println(arrToString(rag3)); 
     System.out.println(arrToString(rag4));
     System.out.println(arrToString(rag5));
+
+    System.out.println(Arrays.deepToString(rag3)); 
+    System.out.println(Arrays.deepToString(rag4));
+    System.out.println(Arrays.deepToString(rag5)); //test w built-in java function; works
 
 
     //arr2DSum test cases
