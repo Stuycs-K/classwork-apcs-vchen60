@@ -11,9 +11,12 @@ public class ReadFile {
       Scanner sc = new Scanner(file);
       //CODE THAT SCANS THE FILE.
       while(sc.hasNext()){
-        if(sc.next().equals("{")) {
-          System.out.println("aaa");
-        }
+        // if(sc.next().equals("{")) {
+        //   System.out.println("aaa");
+        // }
+
+        System.out.println(sc.nextLine());
+sc.nextLine();
       }
       sc.close();//releases the file from your program
 
