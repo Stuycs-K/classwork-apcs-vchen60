@@ -27,7 +27,7 @@ class TriangleTester {
         System.out.println(sc2.nextDouble());
       }
 
-      //System.out.println(countTrianglesA("inputTri.txt"));
+      System.out.println(countTrianglesA("inputTri.txt"));
 
 
     }
@@ -41,11 +41,11 @@ class TriangleTester {
       //CODE THAT SCANS THE FILE.
 
 
-      while(sc.hasNextLine()) {
+      while(sc.hasNext()) {
       int a = sc.nextInt();
       int b = sc.nextInt();
       int c = sc.nextInt();
-      if(!((a+b>=c)||(c+b>=a)||(a+c>=b))) {
+      if(!((a+b<=c)||(c+b<=a)||(a+c<=b))) {
         sum++;
       }
     }
