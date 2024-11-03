@@ -85,7 +85,7 @@ class TriangleTester {
       if(!((b0+b1<=b2)||(b1+b2<=b0)||(b0+b2<=b1))) {
         sum++;
       }
-      if(!((b0+b1<=b2)||(b1+b2<=b0)||(b0+b2<=b1))) {
+      if(!((c0+c1<=c2)||(c1+c2<=c0)||(c0+c2<=c1))) {
         sum++;
       }
       }
