@@ -28,7 +28,7 @@ class TriangleTester {
       }
 
       System.out.println(countTrianglesA("inputTri.txt"));
-
+      System.out.println(countTrianglesB("inputTri.txt"));
 
     }
 
@@ -57,5 +57,44 @@ class TriangleTester {
       return -1; //you can return from a void function just don't put a value.
     }
 
+    }
+
+
+    public static int countTrianglesB(String filename) {
+      int sum = 0;
+
+      try {
+        File file = new File(filename);
+        Scanner sc = new Scanner(file);
+      //CODE THAT SCANS THE FILE.
+
+
+      while(sc.hasNext()) {
+      int a0 = sc.nextInt();
+      int b0 = sc.nextInt();
+      int c0 = sc.nextInt();
+      int a1 = sc.nextInt();
+      int b1 = sc.nextInt();
+      int c1 = sc.nextInt();
+      int a2 = sc.nextInt();
+      int b2 = sc.nextInt();
+      int c2 = sc.nextInt();
+      if(!((a0+a1<=a2)||(a1+a2<=a0)||(a0+a2<=a1))) {
+        sum++;
+      }
+      if(!((b0+b1<=b2)||(b1+b2<=b0)||(b0+b2<=b1))) {
+        sum++;
+      }
+      if(!((b0+b1<=b2)||(b1+b2<=b0)||(b0+b2<=b1))) {
+        sum++;
+      }
+      }
+      sc.close();//releases the file from your program
+    return sum;
+    } catch (FileNotFoundException ex) {
+      //File not found what should you do?
+      System.out.println("File not found");
+      return -1; //you can return from a void function just don't put a value.
+    }
     }
   }
