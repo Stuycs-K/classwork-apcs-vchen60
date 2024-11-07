@@ -11,7 +11,7 @@ public class Animal {
   }
 
 public void speak() {
-  System.out.println("My name is "+ name + "\nI am " + age + " years old.\nI say "+ noise);
+  System.out.println("My name is "+ getName() + "\nI am " + age + " years old.\nI say "+ getNoise() + ".");
 }
   //2.
   /*speak() should print the following message replacing

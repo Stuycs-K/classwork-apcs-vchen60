@@ -1,3 +1,4 @@
+//The bird.java getName method overrides the animal.java getName method, returning "The Mighty " + name instead of just the name.
 /*
 
 
@@ -28,5 +29,8 @@ public class Driver {
   public static void main(String[] args) {
     Animal a1 = new Animal("chirp", 12, "Bob");
     a1.speak();
+
+    Bird b1 = new Bird("chirp", 1, "parrot", 12.2, "blue");
+    b1.speak();
   }
 }
