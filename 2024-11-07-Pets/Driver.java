@@ -1,7 +1,11 @@
-//The bird.java getName method overrides the animal.java getName method, returning "The Mighty " + name instead of just the name.
+//The bird.java getName method overrides the animal.java
+//getName method, returning "The Mighty " + name
+//instead of just the name.
+//The only one that did not work was the Bird b2.
+//This one didn't work because a Bird requires more arguments than an Animal.
+//This matches the is-A expectation as Bird is a subclass, and so you can't store Bird in an animal type
+
 /*
-
-
     Design a main class called Driver.java
     Complete the animal constructor and speak() method.
     *switch* In your main instantiate (create an instance of) an Animal object and test the speak method.
@@ -27,10 +31,18 @@
 
 public class Driver {
   public static void main(String[] args) {
-    Animal a1 = new Animal("chirp", 12, "Bob");
-    a1.speak();
+    Animal aa1 = new Animal("chirp", 12, "Bob");
+    aa1.speak();
 
-    Bird b1 = new Bird("chirp", 1, "parrot", 12.2, "blue");
-    b1.speak();
+    Bird bb1 = new Bird("chirp", 1, "parrot", 12.2, "blue");
+    bb1.speak();
+
+    Animal a1 = new Animal("bbshfdjf", 1345, "wow");
+    a1.speak();
+Bird b1 = new Bird("a", 132, "aa", 12.345, "brown");
+b1.speak();
+//Bird b2 = new Animal("a", 132, "aa"); CAUSES AN ERROR
+Animal a2 = new Bird("a", 132, "aa", 12.345, "brown");
+a2.speak();
   }
 }
