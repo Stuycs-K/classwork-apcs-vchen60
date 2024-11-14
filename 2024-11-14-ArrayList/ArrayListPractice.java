@@ -57,7 +57,16 @@ public static ArrayList<String> mixLists( ArrayList<String> a,  ArrayList<String
 
 }
 else {
-  return mixLists(b,a);
+  for(int i = 0; i < b.size(); i++)
+  {
+    newArr.add(a.get(i));
+    newArr.add(b.get(i));
+  }
+  for(int i = b.size(); i < a.size(); i++) {
+    newArr.add(a.get(i));
+  }
+  return newArr;
+
 }
 }
 
