@@ -33,10 +33,10 @@ public class Warrior extends Adventurer implements adventurerFeatures{
       specialresource = 0;
   }
 
-  public Adventurer(String name, int hp){
-      super.name = name;
-      super.HP = hp;
-      super.maxHP = hp;
+  public Warrior(String name, int hp){
+      super.setName(name);
+      super.setHP(hp);
+      super.setmaxHP(hp);
       specialresource = 0;
   }
 
@@ -66,9 +66,9 @@ public class Warrior extends Adventurer implements adventurerFeatures{
     support their allys
   */
   //hurt or hinder the target adventurer
-  public abstract String attack(Adventurer other) {
-    if(other.HP > 0) {
-      other.setHP(HP-1);
+  public String attack(Adventurer other) {
+    if(other.getHP() > 0) {
+      other.setHP(other.getHP()-1);
       return "attacked! -1HP";
     }
     else {
@@ -79,19 +79,19 @@ public class Warrior extends Adventurer implements adventurerFeatures{
   }
 
   //heall or buff the target adventurer
-  public abstract String support(Adventurer other) {
-    if(other.HP != other.maxHP) {
+  public String support(Adventurer other) {
+    if(other.getHP() != other.getmaxHP()) {
       other.setHP(HP+1);
       return "added 1 hp!";
     }
     return "already at max HP";
   }
-  }
+
 
   //heall or buff self
   public String support() {
-    if(HP != maxHP) {
-      setHP(HP+1);
+    if(getHP() != getmaxHP()) {
+      setHP(getHP()+1);
       return "added 1 hp!";
     }
     return "already at max HP";
@@ -100,8 +100,8 @@ public class Warrior extends Adventurer implements adventurerFeatures{
   //hurt or hinder the target adventurer, consume some special resource
   public String specialAttack(Adventurer other) {
 
-    if(other.HP > 0) {
-      other.setHP(HP-1);
+    if(other.getHP() > 0) {
+      other.setHP(other.getHP()-1);
       return "attacked! -1HP";
     }
     else {
