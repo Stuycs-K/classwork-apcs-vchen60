@@ -1,14 +1,43 @@
-public class Warrior extends Adventurer {
+public interface adventurerFeatures{
+
+    public abstract String getSpecialName();
+    //accessor methods
+    public abstract int getSpecial();
+    public abstract void setSpecial(int n);
+    public abstract int getSpecialMax();
+
+    /*
+      all adventurers must have a way to attack enemies and
+      support their allys
+    */
+    //hurt or hinder the target adventurer
+    public abstract String attack(Adventurer other);
+
+    //heall or buff the target adventurer
+    public abstract String support(Adventurer other);
+
+    //heall or buff self
+    public abstract String support();
+
+    //hurt or hinder the target adventurer, consume some special resource
+    public abstract String specialAttack(Adventurer other);
+
+  }
+
+public class Warrior extends Adventurer implements adventurerFeatures{
+  private int specialresource, maxSR;
   // constructor super
   // implement all the abstract Methods//
   public Warrior(String name){
       super(name, 10);
+      specialresource = 0;
   }
 
   public Adventurer(String name, int hp){
       super.name = name;
       super.HP = hp;
       super.maxHP = hp;
+      specialresource = 0;
   }
 
 
@@ -21,26 +50,65 @@ public class Warrior extends Adventurer {
     return "warrior a0!";
   }
   //accessor methods
-  public abstract int getSpecial() {
+  public int getSpecial() {
+    return specialresource;
+  }
+  public void setSpecial(int n) {
+    specialresource = n;
 
   }
-  public abstract void setSpecial(int n);
-  public abstract int getSpecialMax();
+  public int getSpecialMax() {
+    return maxSR;
+  }
 
   /*
     all adventurers must have a way to attack enemies and
     support their allys
   */
   //hurt or hinder the target adventurer
-  public abstract String attack(Adventurer other);
+  public abstract String attack(Adventurer other) {
+    if(other.HP > 0) {
+      other.setHP(HP-1);
+      return "attacked! -1HP";
+    }
+    else {
+      other.setHP(0);
+      return "HP reduced to 0, you died";
+      //is dying a feature?
+    }
+  }
 
   //heall or buff the target adventurer
-  public abstract String support(Adventurer other);
+  public abstract String support(Adventurer other) {
+    if(other.HP != other.maxHP) {
+      other.setHP(HP+1);
+      return "added 1 hp!";
+    }
+    return "already at max HP";
+  }
+  }
 
   //heall or buff self
-  public abstract String support();
+  public String support() {
+    if(HP != maxHP) {
+      setHP(HP+1);
+      return "added 1 hp!";
+    }
+    return "already at max HP";
+  }
 
   //hurt or hinder the target adventurer, consume some special resource
-  public abstract String specialAttack(Adventurer other);
+  public String specialAttack(Adventurer other) {
+
+    if(other.HP > 0) {
+      other.setHP(HP-1);
+      return "attacked! -1HP";
+    }
+    else {
+      other.setHP(0);
+      return "HP reduced to 0, you died";
+      //is dying a feature?
+    }
+  }
 
 }
