@@ -1,43 +1,19 @@
-public interface adventurerFeatures{
 
-    public abstract String getSpecialName();
-    //accessor methods
-    public abstract int getSpecial();
-    public abstract void setSpecial(int n);
-    public abstract int getSpecialMax();
-
-    /*
-      all adventurers must have a way to attack enemies and
-      support their allys
-    */
-    //hurt or hinder the target adventurer
-    public abstract String attack(Adventurer other);
-
-    //heall or buff the target adventurer
-    public abstract String support(Adventurer other);
-
-    //heall or buff self
-    public abstract String support();
-
-    //hurt or hinder the target adventurer, consume some special resource
-    public abstract String specialAttack(Adventurer other);
-
-  }
 
 public class Warrior extends Adventurer implements adventurerFeatures{
-  private int specialresource, maxSR;
+  private int charisma, maxSR;
   // constructor super
   // implement all the abstract Methods//
   public Warrior(String name){
       super(name, 10);
-      specialresource = 0;
+      charisma = 0;
+      this.maxSR = 10;
   }
 
   public Warrior(String name, int hp){
-      super.setName(name);
-      super.setHP(hp);
-      super.setmaxHP(hp);
-      specialresource = 0;
+      super(name,hp);
+      this.maxSR = 10;
+      this.charisma = 0;
   }
 
 
@@ -47,18 +23,18 @@ public class Warrior extends Adventurer implements adventurerFeatures{
   */
   //give it a short name (fewer than 13 characters)
   public String getSpecialName() {
-    return "warrior a0!";
+    return "charisma";
   }
   //accessor methods
   public int getSpecial() {
-    return specialresource;
+    return charisma;
   }
   public void setSpecial(int n) {
-    specialresource = n;
+    charisma = n;
 
   }
   public int getSpecialMax() {
-    return maxSR;
+    return maxSR; //10 here.
   }
 
   /*
@@ -81,7 +57,7 @@ public class Warrior extends Adventurer implements adventurerFeatures{
   //heall or buff the target adventurer
   public String support(Adventurer other) {
     if(other.getHP() != other.getmaxHP()) {
-      other.setHP(HP+1);
+      other.setHP(other.getHP()+1);
       return "added 1 hp!";
     }
     return "already at max HP";
