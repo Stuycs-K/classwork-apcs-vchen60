@@ -78,15 +78,17 @@ public class Warrior extends Adventurer {
   //hurt or hinder the target adventurer, consume some special resource
   public String specialAttack(Adventurer other) {
     if(charisma > 0) {
-    if(other.getHP() > 0) {
-      other.setHP(other.getHP()-1);
-      return "attacked! -1HP";
-    }
-    else {
+
+      other.setHP(other.getHP()-2);
+      charisma--;
+
+      if(other.getHP()<=0) {
       other.setHP(0);
-      return "HP reduced to 0, enemy died";
-      //is dying a feature?
+      return "attacked, -2HP. enemy health reduced to 0, enemy died";
     }
+    return "attacked! -2HP with special skill. consumed 1 charisma, "+charisma+ " remaining.";
+
+      //is dying a feature?
   }
   else {
     return "not enough charisma";
