@@ -14,6 +14,10 @@ public class Warrior extends Adventurer {
       this.charisma = 0;
   }
 
+  public Warrior(){
+   this("DavetheBrave");
+ }
+
 
   /*
     all adventurers must have a custom special
