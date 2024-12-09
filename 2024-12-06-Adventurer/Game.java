@@ -24,12 +24,15 @@ while(a0.getHP()>0&&enemy.getHP()>0) {
 
     if(secondInput.equals("a")||secondInput.equals("attack")) {
       a0.attack(enemy);
+      System.out.println("enemy attacked");
     }
     else if(secondInput.equals("sp")||secondInput.equals("special")) {
-      a0.specialAttack(enemy);
+      String l = a0.specialAttack(enemy);
+      System.out.println(l);
     }
     else if(secondInput.equals("su")||secondInput.equals("support")) {
-      a0.support();
+      String l = a0.support();
+      System.out.println(l);
     }
     else if(secondInput.equals("quit")) {
       break;
@@ -42,15 +45,18 @@ while(a0.getHP()>0&&enemy.getHP()>0) {
       System.out.println("you won!");
     }
     else {
-      int random = (int) Math.random()*3;
+      int random = (int) (Math.random()*3);
       if(random == 0) {
         enemy.attack(a0);
+        System.out.println("enemy attacked you");
       }
       else if(random == 1) {
-        enemy.specialAttack(a0);
+        String l = enemy.specialAttack(a0);
+        System.out.println("enemy tried to sp attack:" l);
       }
       else {
         enemy.support();
+        System.out.println("enemy supported themselves");
       }
     }
 
