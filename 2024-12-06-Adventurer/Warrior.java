@@ -1,6 +1,4 @@
-
-
-public class Warrior extends Adventurer implements adventurerFeatures{
+public class Warrior extends Adventurer {
   private int charisma, maxSR;
   // constructor super
   // implement all the abstract Methods//
@@ -75,16 +73,21 @@ public class Warrior extends Adventurer implements adventurerFeatures{
 
   //hurt or hinder the target adventurer, consume some special resource
   public String specialAttack(Adventurer other) {
-
+    if(charisma > 0) {
     if(other.getHP() > 0) {
       other.setHP(other.getHP()-1);
       return "attacked! -1HP";
     }
     else {
       other.setHP(0);
-      return "HP reduced to 0, you died";
+      return "HP reduced to 0, enemy died";
       //is dying a feature?
     }
   }
+  else {
+    return "not enough charisma";
+  }
+}
+
 
 }
